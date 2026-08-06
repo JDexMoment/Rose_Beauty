@@ -1,0 +1,46 @@
+@import "tailwindcss";
+
+:root {
+  --background: #FFF8F5;
+  --foreground: #1A1A1A;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: #FFF8F5;
+  color: #1A1A1A;
+  font-family: 'Manrope', system-ui, -apple-system, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Hide scrollbar for Chrome */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-thumb {
+  background: #E8B4B8;
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-track {
+  background: #FFF8F5;
+}
+
+/* Glass effect */
+.glass {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255,255,255,0.6);
+}
+
+/* Editorial heading */
+.font-display {
+  font-family: 'Cormorant Garamond', serif;
+}
+.font-serif-display {
+  font-family: 'Playfair Display', serif;
+}
