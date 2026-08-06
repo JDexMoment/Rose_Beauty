@@ -706,8 +706,8 @@ export default function Home() {
                   <span className="absolute bottom-3 right-3 bg-[#1A1A1A] text-white text-[11px] px-2.5 py-1 rounded-full opacity-0 group-hover:opacity-100 transition">#{i + 1}</span>
                 </div>
               ))}
-              {/* Пустой квадратик теперь в конце блока До/После */}
-              <div className="relative rounded-2xl overflow-hidden bg-[#FFF8F5] border border-dashed border-[#E8D5B7] aspect-[4/3.2] lg:aspect-auto lg:row-span-1 flex items-center justify-center p-6 text-center">
+              {/* Пустой квадратик теперь в конце блока До/После — фикс мобилки: одинаковая высота */}
+              <div className="relative rounded-2xl overflow-hidden bg-[#FFF8F5] border border-dashed border-[#E8D5B7] aspect-[4/3.2] flex flex-col items-center justify-center p-4 lg:p-6 text-center w-full self-stretch">
                 <div>
                   <div className="w-10 h-10 mx-auto rounded-full bg-[#FDE8E9] flex items-center justify-center">
                     <Heart className="w-5 h-5 text-[#C9898E]" />
@@ -981,9 +981,9 @@ export default function Home() {
                 <a
                   href="https://dikidi.ru/ru/profile/roza_128"
                   target="_blank"
-                  className="mt-3 w-full bg-white text-[#1A1A1A] py-4 rounded-full font-medium flex items-center justify-center gap-2 hover:bg-[#FFF8F5] transition"
+                  className="mt-3 w-full bg-white text-[#1A1A1A] py-3.5 lg:py-4 px-4 rounded-full font-medium inline-flex items-center justify-center gap-2 hover:bg-[#FFF8F5] transition text-sm lg:text-base text-center leading-tight whitespace-normal"
                 >
-                  Забронировать на Dikidi — выбрать мастера и время <ArrowRight className="w-4 h-4" />
+                  <span>Забронировать на Dikidi — выбрать мастера и время</span> <ArrowRight className="w-4 h-4 shrink-0" />
                 </a>
                 <div className="mt-3 flex items-center justify-center gap-2 text-xs text-white/50">
                   <Star className="w-3.5 h-3.5 fill-[#C9A96A] text-[#C9A96A]" /> 5.0 • 382 отзыва • свободные окна сегодня

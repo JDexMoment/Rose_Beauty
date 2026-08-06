@@ -226,10 +226,10 @@ export default function MasterPage() {
             ))}
           </div>
           <div className="p-6 bg-[#FDF2EE] flex gap-2">
-            <a href={master.dikidiUrl} target="_blank" className="flex-1 bg-[#1A1A1A] text-white py-3 rounded-full text-sm font-medium text-center hover:bg-black transition">
+            <a href={master.dikidiUrl} target="_blank" className="flex-1 bg-[#1A1A1A] text-white py-2.5 lg:py-3 rounded-full text-sm font-medium text-center inline-flex items-center justify-center leading-none hover:bg-black transition px-3">
               Записаться к {master.shortName} на Dikidi
             </a>
-            <Link href="/#booking" className="flex-1 bg-white border border-[#E8D5B7] py-3 rounded-full text-sm font-medium text-center hover:bg-white transition">
+            <Link href="/#booking" className="flex-1 bg-white border border-[#E8D5B7] py-2.5 lg:py-3 rounded-full text-sm font-medium text-center inline-flex items-center justify-center leading-none hover:bg-white transition px-3">
               Задать вопрос
             </Link>
           </div>
@@ -294,10 +294,10 @@ export default function MasterPage() {
             </div>
           </div>
           <div className="flex gap-2 w-full lg:w-auto">
-            <a href={master.dikidiUrl} target="_blank" className="flex-1 lg:flex-none bg-[#C9A96A] text-[#1A1A1A] px-7 py-3 rounded-full text-sm font-medium text-center hover:bg-[#E8D5B7] transition">
+            <a href={master.dikidiUrl} target="_blank" className="flex-1 lg:flex-none bg-[#C9A96A] text-[#1A1A1A] px-5 lg:px-7 py-2.5 lg:py-3 rounded-full text-sm font-medium text-center inline-flex items-center justify-center leading-none hover:bg-[#E8D5B7] transition">
               Записаться на Dikidi
             </a>
-            <a href="tel:+74852336618" className="flex-1 lg:flex-none bg-white text-[#1A1A1A] px-7 py-3 rounded-full text-sm font-medium text-center">
+            <a href="tel:+74852336618" className="flex-1 lg:flex-none bg-white text-[#1A1A1A] px-5 lg:px-7 py-2.5 lg:py-3 rounded-full text-sm font-medium text-center inline-flex items-center justify-center leading-none">
               Позвонить
             </a>
           </div>
