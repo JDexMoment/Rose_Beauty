@@ -649,7 +649,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Works - Portfolio с BeforeAfter + избранные */}
+      {/* Works - Portfolio: сначала Избранное (вертикальная свадьба), потом До/После + пустой блок в конце */}
       <section id="works" className="max-w-[1280px] mx-auto px-4 lg:px-6 mt-14 lg:mt-20">
         <div className="bg-white rounded-[28px] border border-[#E8D5B7]/50 p-5 lg:p-8">
           <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-4">
@@ -659,39 +659,23 @@ export default function Home() {
               </div>
               <h2 className="font-display text-[28px] lg:text-[42px] leading-none mt-3">Работы, которые говорят сами</h2>
             </div>
-            <div className="text-sm text-[#8C7A78] max-w-[420px]">Реальные фото наших гостей из папки BeforeAfter и избранные работы мастеров. Хотите так же? Покажите мастеру.</div>
+            <div className="text-sm text-[#8C7A78] max-w-[420px]">Сначала избранные работы мастеров, затем трансформации до/после. Хотите так же? Покажите мастеру.</div>
           </div>
 
-          {/* До / После */}
+          {/* Избранное — теперь первое, вертикальная свадьба с тегом Укладка */}
           <div className="mt-6">
-            <div className="flex items-center gap-3 mb-3">
-              <span className="inline-flex items-center gap-1.5 bg-[#1A1A1A] text-white text-xs px-3 py-1.5 rounded-full">
-                <Sparkles className="w-3.5 h-3.5 text-[#C9A96A]" /> До / После
-              </span>
-            </div>
-            <div className="grid grid-cols-2 lg:grid-cols-3 gap-3 lg:gap-4">
-              {beforeAfterWorks.map((src, i) => (
-                <div key={`ba-${i}`} className={`group relative rounded-2xl overflow-hidden bg-[#FDF2EE] ${i === 0 ? "lg:row-span-2 aspect-[4/5] lg:aspect-auto" : "aspect-[4/3.2]"} border border-transparent hover:border-[#E8D5B7] transition`}>
-                  <img src={src} alt={`До После ${i + 1}`} className="w-full h-full object-cover group-hover:scale-[1.03] transition duration-700" />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/35 via-black/0 to-transparent opacity-60 group-hover:opacity-80 transition" />
-                  <span className="absolute top-3 left-3 bg-white/95 backdrop-blur text-xs px-2.5 py-1 rounded-full font-medium border border-[#E8D5B7]">До \ После</span>
-                  <span className="absolute bottom-3 right-3 bg-[#1A1A1A] text-white text-[11px] px-2.5 py-1 rounded-full opacity-0 group-hover:opacity-100 transition">#{i + 1}</span>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          {/* Избранные работы с кастомными тегами */}
-          <div className="mt-8">
             <div className="flex items-center gap-3 mb-3">
               <span className="inline-flex items-center gap-1.5 bg-[#FDE8E9] border border-[#E8D5B7] text-xs px-3 py-1.5 rounded-full font-medium">
                 Избранное
               </span>
-              <span className="text-xs text-[#8C7A78]">Подборка по мастерам</span>
+              <span className="text-xs text-[#8C7A78]">Подборка по мастерам — со своим тегом</span>
             </div>
             <div className="grid grid-cols-2 lg:grid-cols-3 gap-3 lg:gap-4">
               {customWorks.map((w, i) => (
-                <div key={`custom-${i}`} className="group relative rounded-2xl overflow-hidden bg-[#FDF2EE] aspect-[4/3.2] border border-transparent hover:border-[#E8D5B7] transition">
+                <div
+                  key={`custom-${i}`}
+                  className={`group relative rounded-2xl overflow-hidden bg-[#FDF2EE] border border-transparent hover:border-[#E8D5B7] transition ${i === 0 ? "lg:row-span-2 aspect-[4/5] lg:aspect-auto" : "aspect-[4/3.2]"}`}
+                >
                   <img src={w.src} alt={w.tag} className="w-full h-full object-cover group-hover:scale-[1.03] transition duration-700" />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent opacity-60 group-hover:opacity-80 transition" />
                   <span className="absolute bottom-2 left-2 bg-white/95 backdrop-blur text-xs px-3 py-1.5 rounded-full font-medium border border-[#E8D5B7] flex items-center gap-1">
@@ -699,8 +683,31 @@ export default function Home() {
                   </span>
                 </div>
               ))}
-              {/* Пустая карточка-приглашение для баланса сетки */}
-              <div className="hidden lg:flex relative rounded-2xl overflow-hidden bg-[#FFF8F5] border border-dashed border-[#E8D5B7] aspect-[4/3.2] items-center justify-center p-6 text-center">
+            </div>
+          </div>
+
+          {/* До / После — теперь второе, пустой квадратик в конце */}
+          <div className="mt-8">
+            <div className="flex items-center gap-3 mb-3">
+              <span className="inline-flex items-center gap-1.5 bg-[#1A1A1A] text-white text-xs px-3 py-1.5 rounded-full">
+                <Sparkles className="w-3.5 h-3.5 text-[#C9A96A]" /> До \ После
+              </span>
+              <span className="text-xs text-[#8C7A78]">Трансформации из папки BeforeAfter</span>
+            </div>
+            <div className="grid grid-cols-2 lg:grid-cols-3 gap-3 lg:gap-4">
+              {beforeAfterWorks.map((src, i) => (
+                <div
+                  key={`ba-${i}`}
+                  className={`group relative rounded-2xl overflow-hidden bg-[#FDF2EE] border border-transparent hover:border-[#E8D5B7] transition ${i === 0 ? "lg:row-span-2 aspect-[4/5] lg:aspect-auto" : "aspect-[4/3.2]"}`}
+                >
+                  <img src={src} alt={`До После ${i + 1}`} className="w-full h-full object-cover group-hover:scale-[1.03] transition duration-700" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/35 via-black/0 to-transparent opacity-60 group-hover:opacity-80 transition" />
+                  <span className="absolute top-3 left-3 bg-white/95 backdrop-blur text-xs px-2.5 py-1 rounded-full font-medium border border-[#E8D5B7]">До \ После</span>
+                  <span className="absolute bottom-3 right-3 bg-[#1A1A1A] text-white text-[11px] px-2.5 py-1 rounded-full opacity-0 group-hover:opacity-100 transition">#{i + 1}</span>
+                </div>
+              ))}
+              {/* Пустой квадратик теперь в конце блока До/После */}
+              <div className="relative rounded-2xl overflow-hidden bg-[#FFF8F5] border border-dashed border-[#E8D5B7] aspect-[4/3.2] lg:aspect-auto lg:row-span-1 flex items-center justify-center p-6 text-center">
                 <div>
                   <div className="w-10 h-10 mx-auto rounded-full bg-[#FDE8E9] flex items-center justify-center">
                     <Heart className="w-5 h-5 text-[#C9898E]" />
