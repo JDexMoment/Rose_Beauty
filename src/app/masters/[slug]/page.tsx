@@ -244,7 +244,7 @@ export default function MasterPage() {
             <h3 className="font-display text-2xl mt-3">
               {master.rating} ★ • {master.reviews} оценок
             </h3>
-            <p className="text-sm text-white/60 mt-1">Только хорошие отзывы — мы показываем лучшее для портфолио</p>
+            <p className="text-sm text-white/60 mt-1">Наши мастера имеют только хорошие отзывы</p>
             <div className="mt-4 grid grid-cols-3 gap-2 text-center">
               <div className="bg-white/10 border border-white/10 rounded-2xl py-3">
                 <div className="font-display text-lg">5.0</div>
