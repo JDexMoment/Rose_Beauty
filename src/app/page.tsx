@@ -31,7 +31,7 @@ const masters = [
     spec: "Парикмахер-универсал / Визажист",
     rating: "5.0",
     reviews: 123,
-    img: "https://f2.dikidi.net/c27/v26034/7vvju3c89i.jpg?size=m",
+    img: "public\masters\Kristina.png",
     tag: "Топ-мастер",
   },
   {
@@ -39,7 +39,7 @@ const masters = [
     spec: "Парикмахер-универсал",
     rating: "5.0",
     reviews: 76,
-    img: "https://f1.dikidi.net/c2/v1534/2hu04fop47.jpg?size=m",
+    img: "public\masters\Olga.png",
     tag: "Стаж 12 лет",
   },
   {
@@ -47,31 +47,31 @@ const masters = [
     spec: "Парикмахер-универсал",
     rating: "4.9",
     reviews: 99,
-    img: "https://f2.dikidi.net/c22/v21988/7sohc25km3.jpg?size=m",
+    img: "public\masters\Irina.png",
     tag: "Колорист",
   },
-  {
-    name: "Татьяна",
-    spec: "Парикмахер мужской",
-    rating: "5.0",
-    reviews: 60,
-    img: "https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=400&q=80",
-    tag: "Barber",
-  },
+  // {
+  //   name: "Татьяна",
+  //   spec: "Парикмахер мужской",
+  //   rating: "5.0",
+  //   reviews: 60,
+  //   img: "public\masters\Tatiana.png",
+  //   tag: "Barber",
+  // },
   {
     name: "Бабенко Дарья",
     spec: "Мастер",
     rating: "5.0",
     reviews: 15,
-    img: "https://f1.dikidi.net/c10/v9462/6rd8doijmc.jpg?size=m",
-    tag: "",
+    img: "public\masters\Daria.png",
+    tag: "Nail",
   },
   {
     name: "Виктория",
     spec: "Мастер ногтевого сервиса",
     rating: "5.0",
     reviews: 7,
-    img: "https://f2.dikidi.net/c25/v24806/2bhp0t09bq.jpg?size=m",
+    img: "public\masters\Vicrotia.png",
     tag: "Nail",
   },
 ];
@@ -82,7 +82,7 @@ const serviceCategories = [
     title: "Парикмахерский зал",
     desc: "Стрижки, окрашивание, уход",
     icon: Scissors,
-    img: "https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=800&q=80",
+    img: "public\salon\Hair.png",
     services: [
       { name: "Стрижка женская", time: "60 мин", price: "от 1 200 ₽" },
       { name: "Стрижка мужская", time: "40 мин", price: "от 900 ₽" },
@@ -97,7 +97,7 @@ const serviceCategories = [
     title: "Ногтевой сервис",
     desc: "Маникюр, педикюр, покрытие",
     icon: Sparkles,
-    img: "https://images.unsplash.com/photo-1604654894610-df63bc536371?auto=format&fit=crop&w=800&q=80",
+    img: "public\works\Manicure.png",
     services: [
       { name: "Маникюр классический", time: "60 мин", price: "от 1 000 ₽" },
       { name: "Маникюр с покрытием гель-лак", time: "90 мин", price: "от 1 600 ₽" },
@@ -111,7 +111,7 @@ const serviceCategories = [
     title: "Брови • Ресницы • Визаж",
     desc: "Взгляд, который запоминается",
     icon: Heart,
-    img: "https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?auto=format&fit=crop&w=800&q=80",
+    img: "public\works\Eyebrows.png",
     services: [
       { name: "Коррекция и окрашивание бровей", time: "40 мин", price: "от 800 ₽" },
       { name: "Ламинирование бровей", time: "60 мин", price: "от 1 500 ₽" },
@@ -126,7 +126,7 @@ const serviceCategories = [
     title: "Тело и уход",
     desc: "Депиляция, солярий, SPA",
     icon: Users,
-    img: "https://images.unsplash.com/photo-1544161515-4ab6ce6db874?auto=format&fit=crop&w=800&q=80",
+    img: "public\works\Epilation.png",
     services: [
       { name: "Депиляция (воск/сахар)", time: "30-60 мин", price: "от 600 ₽" },
       { name: "Солярий", time: "1 мин", price: "от 25 ₽" },
@@ -157,12 +157,14 @@ const reviews = [
 ];
 
 const works = [
-  "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=600&q=80",
-  "https://images.unsplash.com/photo-1492106087820-71f1a00d2b11?auto=format&fit=crop&w=600&q=80",
-  "https://images.unsplash.com/photo-1519699047748-de8e457a634e?auto=format&fit=crop&w=600&q=80",
-  "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=600&q=80",
-  "https://images.unsplash.com/photo-1526045478515-99145907023c?auto=format&fit=crop&w=600&q=80",
-  "https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?auto=format&fit=crop&w=600&q=80",
+  "public\works\Daria\DariaExample3.png",
+  "public\works\Victoria\VictoriaExample2.png",
+  "public\works\Olga\OlgaExample2.png",
+  "public\works\Kristina\KrisExample4.png",
+  "public\works\Irina\IrinaExample3.png",
+  "public\works\Irina\IrinaExample4.png",
+  "public\works\Olga\OlgaExample1.png",
+  "public\works\Kristina\KrisExample2.png"
 ];
 
 export default function Home() {
@@ -374,7 +376,7 @@ export default function Home() {
               <div className="relative rounded-[28px] lg:rounded-[36px] overflow-hidden bg-[#E8D5B7] p-1.5 lg:p-2">
                 <div className="relative rounded-[22px] lg:rounded-[28px] overflow-hidden aspect-[4/3.2] lg:aspect-[4/3]">
                   <img
-                    src="https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1200&q=80"
+                    src="public\salon\Hair.png"
                     alt="Интерьер салона Роза Ярославль"
                     className="w-full h-full object-cover"
                   />
@@ -439,17 +441,17 @@ export default function Home() {
             {
               title: "Расслабляющий интерьер",
               text: "Светлый, уютный, с ароматом кофе. Приходите отдохнуть, а не просто «на процедуру».",
-              img: "https://images.unsplash.com/photo-1521590832167-7bcbfaa6381f?auto=format&fit=crop&w=600&q=80",
+              img: "public\salon\Hair1.jpg",
             },
             {
               title: "Квалифицированные мастера",
               text: "Дипломированные специалисты с медицинским образованием. Постоянно учимся новому.",
-              img: "https://images.unsplash.com/photo-1600948836101-f9ffda59d250?auto=format&fit=crop&w=600&q=80",
+              img: "public\salon\Hair.png",
             },
             {
               title: "Современные методики",
               text: "Только натуральные материалы, проф. косметика и бережное отношение к волосам и коже.",
-              img: "https://images.unsplash.com/photo-1516975080664-ed2fc6a32937?auto=format&fit=crop&w=600&q=80",
+              img: "public\salon\Manicure.png",
             },
           ].map((card) => (
             <div key={card.title} className="group bg-white rounded-[24px] overflow-hidden border border-[#E8D5B7]/50 hover:shadow-[0_16px_40px_rgba(201,169,106,0.15)] transition">
