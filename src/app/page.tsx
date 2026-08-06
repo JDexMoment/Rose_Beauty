@@ -390,7 +390,7 @@ export default function Home() {
             </div>
 
             {/* Right */}
-            <motion.div initial={{ opacity: 0, scale: 0.98 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.8 }} className="order-1 lg:order-2 relative">
+            <motion.div initial={{ opacity: 0, scale: 0.98 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.8 }} className="order-1 lg:order-2 relative pb-8 lg:pb-0">
               <div className="relative rounded-[28px] lg:rounded-[36px] overflow-hidden bg-[#E8D5B7] p-1.5 lg:p-2">
                 <div className="relative rounded-[22px] lg:rounded-[28px] overflow-hidden aspect-[4/3.2] lg:aspect-[4/3]">
                   <img
@@ -412,8 +412,8 @@ export default function Home() {
                 </div>
               </div>
 
-              {/* Badge */}
-              <div className="absolute -bottom-3 lg:-bottom-4 -left-1 lg:-left-4 bg-white rounded-2xl shadow-[0_12px_40px_rgba(0,0,0,0.08)] border border-[#E8D5B7] p-3 lg:p-4 flex items-center gap-3">
+              {/* Badge — на мобилке не перекрывает "Свободные окна" */}
+              <div className="absolute -bottom-6 lg:-bottom-4 left-1/2 -translate-x-1/2 lg:left-auto lg:translate-x-0 lg:-left-4 bg-white rounded-2xl shadow-[0_12px_40px_rgba(0,0,0,0.08)] border border-[#E8D5B7] p-2.5 lg:p-4 flex items-center gap-2.5 lg:gap-3 w-[86%] lg:w-auto justify-center lg:justify-start">
                 <div className="w-10 h-10 lg:w-12 lg:h-12 rounded-xl bg-[#FDE8E9] flex items-center justify-center">
                   <Star className="w-5 h-5 lg:w-6 lg:h-6 text-[#C9898E] fill-[#C9898E]" />
                 </div>
@@ -628,17 +628,17 @@ export default function Home() {
               <div className="p-4 lg:p-5 flex flex-col flex-1">
                 <a href={`/masters/${m.slug}`} className="font-medium leading-tight hover:text-[#C9898E] transition">{m.name}</a>
                 <div className="text-xs lg:text-sm text-[#8C7A78] mt-1 leading-tight">{m.spec}</div>
-                <div className="mt-3 grid grid-cols-2 gap-2">
+                <div className="mt-3 grid grid-cols-2 gap-1.5 lg:gap-2">
                   <a
                     href={`/masters/${m.slug}`}
-                    className="inline-flex items-center justify-center gap-1 bg-[#1A1A1A] text-white rounded-full py-2.5 text-sm font-medium hover:bg-black transition"
+                    className="inline-flex items-center justify-center gap-1 bg-[#1A1A1A] text-white rounded-full py-2 lg:py-2.5 px-2 lg:px-3 text-[11px] lg:text-sm font-medium hover:bg-black transition whitespace-nowrap"
                   >
                     Портфолио
                   </a>
                   <a
                     href={`https://dikidi.ru/ru/profile/roza_128/master/${m.slug === 'kristina' ? '56592' : m.slug === 'olga' ? '4087' : m.slug === 'irina' ? '2059162' : m.slug === 'daria' ? '1488191' : '1911354'}`}
                     target="_blank"
-                    className="inline-flex items-center justify-center gap-1 bg-[#FDE8E9] hover:bg-[#E8B4B8] hover:text-white rounded-full py-2.5 text-sm font-medium transition"
+                    className="inline-flex items-center justify-center gap-1 bg-[#FDE8E9] hover:bg-[#E8B4B8] hover:text-white rounded-full py-2 lg:py-2.5 px-2 lg:px-3 text-[11px] lg:text-sm font-medium transition whitespace-nowrap"
                   >
                     Dikidi
                   </a>
