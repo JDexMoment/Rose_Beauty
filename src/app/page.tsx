@@ -441,7 +441,7 @@ export default function Home() {
             {
               title: "Квалифицированные мастера",
               text: "Дипломированные специалисты с медицинским образованием. Постоянно учимся новому.",
-              img: "/salon/intro.jpg",
+              img: "/salon/Rewards.jpg",
             },
             {
               title: "Современные методики",

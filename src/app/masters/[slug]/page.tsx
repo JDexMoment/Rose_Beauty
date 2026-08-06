@@ -171,7 +171,7 @@ export default function MasterPage() {
 
             <div className="bg-white rounded-[24px] border border-[#E8D5B7]/50 p-5 lg:p-6">
               <h3 className="font-display text-xl">Портфолио</h3>
-              <p className="text-sm text-[#8C7A78] mt-1">Работы мастера — кликните чтобы увеличить. Все фото из папки <code className="bg-[#FDF2EE] px-1.5 py-0.5 rounded text-xs">public{master.worksPrefix}</code> в формате .jpg</p>
+              <p className="text-sm text-[#8C7A78] mt-1">Работы мастера — кликните чтобы увеличить.</p>
               <div className="mt-4 grid grid-cols-3 gap-2 lg:gap-3">
                 {localWorks.map((src, i) => (
                   <button
@@ -191,9 +191,6 @@ export default function MasterPage() {
                     <span className="absolute bottom-1.5 left-1.5 bg-white/90 backdrop-blur text-[10px] px-2 py-1 rounded-full">#{i + 1}</span>
                   </button>
                 ))}
-              </div>
-              <div className="mt-3 text-xs text-[#8C7A78] flex items-center gap-1.5">
-                <Heart className="w-3.5 h-3.5 text-[#C9898E]" /> Добавь свои фото как 1.jpg, 2.jpg ... 6.jpg — они появятся автоматически
               </div>
             </div>
           </div>
