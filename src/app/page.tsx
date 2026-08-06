@@ -15,6 +15,7 @@ import {
   Menu,
   X,
   ChevronRight,
+  ChevronDown,
   Quote,
   Award,
   Users,
@@ -174,13 +175,28 @@ export default function Home() {
   const [mobileMenu, setMobileMenu] = useState(false);
   const [form, setForm] = useState({ name: "", phone: "", service: "" });
   const [sent, setSent] = useState(false);
+  const [serviceOpen, setServiceOpen] = useState(false);
   const active = serviceCategories.find((c) => c.id === activeCat)!;
+
+  const serviceOptions = [
+    { value: "", label: "Выберите услугу" },
+    { value: "hair", label: "Стрижка / Окрашивание" },
+    { value: "nails", label: "Маникюр / Педикюр" },
+    { value: "brows", label: "Брови / Ресницы / Визаж" },
+    { value: "body", label: "Депиляция / Солярий" },
+    { value: "consult", label: "Консультация" },
+  ];
+  const selectedService = serviceOptions.find((o) => o.value === form.service);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+    // Сейчас заявка никуда не уходит — только демо-анимация "Спасибо" + console.log
+    // Чтобы реально отправлять: подключим Telegram/Email (см. ответ ниже)
+    console.log("Заявка Роза:", form);
     setSent(true);
     setTimeout(() => setSent(false), 4000);
     setForm({ name: "", phone: "", service: "" });
+    setServiceOpen(false);
   };
 
   return (
@@ -875,18 +891,68 @@ export default function Home() {
                   type="tel"
                   className="w-full bg-white/10 border border-white/15 rounded-2xl px-4 py-3.5 text-sm placeholder:text-white/50 focus:outline-none focus:border-[#C9A96A] focus:bg-white/15 transition"
                 />
-                <select
-                  value={form.service}
-                  onChange={(e) => setForm({ ...form, service: e.target.value })}
-                  className="w-full bg-white/10 border border-white/15 rounded-2xl px-4 py-3.5 text-sm text-white/80 focus:outline-none focus:border-[#C9A96A]"
-                >
-                  <option value="" className="text-black">Выберите услугу</option>
-                  <option value="hair" className="text-black">Стрижка / Окрашивание</option>
-                  <option value="nails" className="text-black">Маникюр / Педикюр</option>
-                  <option value="brows" className="text-black">Брови / Ресницы / Визаж</option>
-                  <option value="body" className="text-black">Депиляция / Солярий</option>
-                  <option value="consult" className="text-black">Консультация</option>
-                </select>
+                {/* Кастомный селект — премиум, без системного синего */}
+                <div className="relative">
+                  <button
+                    type="button"
+                    onClick={() => setServiceOpen(!serviceOpen)}
+                    className={`w-full flex items-center justify-between gap-3 bg-white/10 border rounded-2xl px-4 py-3.5 text-sm text-left transition backdrop-blur-sm ${
+                      serviceOpen ? "border-[#C9A96A] bg-white/15 ring-1 ring-[#C9A96A]/20" : "border-white/15 hover:bg-white/12 hover:border-white/20"
+                    }`}
+                    aria-haspopup="listbox"
+                    aria-expanded={serviceOpen}
+                  >
+                    <span className={`${form.service ? "text-white" : "text-white/50"}`}>{selectedService?.label || "Выберите услугу"}</span>
+                    <span className={`w-7 h-7 rounded-full flex items-center justify-center border transition ${serviceOpen ? "bg-[#C9A96A] border-[#C9A96A] text-[#1A1A1A]" : "bg-white/10 border-white/15 text-white/70"}`}>
+                      <ChevronDown className={`w-4 h-4 transition-transform ${serviceOpen ? "rotate-180" : ""}`} />
+                    </span>
+                  </button>
+
+                  <AnimatePresence>
+                    {serviceOpen && (
+                      <>
+                        {/* клик вне — закрыть */}
+                        <div className="fixed inset-0 z-20" onClick={() => setServiceOpen(false)} aria-hidden />
+                        <motion.div
+                          initial={{ opacity: 0, y: 8, scale: 0.98 }}
+                          animate={{ opacity: 1, y: 0, scale: 1 }}
+                          exit={{ opacity: 0, y: 8, scale: 0.98 }}
+                          transition={{ duration: 0.18, ease: "easeOut" }}
+                          className="absolute z-30 left-0 right-0 mt-2 bg-[#1F1F1F] border border-white/10 rounded-2xl shadow-[0_16px_40px_rgba(0,0,0,0.35)] overflow-hidden p-1.5"
+                          role="listbox"
+                        >
+                          {serviceOptions.map((opt) => {
+                            const isSelected = form.service === opt.value;
+                            const isPlaceholder = opt.value === "";
+                            return (
+                              <button
+                                key={opt.value || "placeholder"}
+                                type="button"
+                                role="option"
+                                aria-selected={isSelected}
+                                onClick={() => {
+                                  setForm({ ...form, service: opt.value });
+                                  setServiceOpen(false);
+                                }}
+                                className={`w-full text-left px-3.5 py-2.5 rounded-xl text-sm flex items-center justify-between gap-2 transition ${
+                                  isPlaceholder
+                                    ? "text-white/40 hover:text-white/60 hover:bg-white/5"
+                                    : isSelected
+                                    ? "bg-[#C9A96A] text-[#1A1A1A] font-medium"
+                                    : "text-white/85 hover:bg-white/10 hover:text-white"
+                                }`}
+                              >
+                                <span>{opt.label}</span>
+                                {isSelected && !isPlaceholder && <span className="w-1.5 h-1.5 rounded-full bg-[#1A1A1A]" />}
+                              </button>
+                            );
+                          })}
+                          <div className="px-3 py-2 text-[11px] text-white/35 border-t border-white/5 mt-1.5">Можно выбрать позже — администратор уточнит по телефону</div>
+                        </motion.div>
+                      </>
+                    )}
+                  </AnimatePresence>
+                </div>
 
                 <button type="submit" className="w-full bg-[#C9A96A] hover:bg-[#E8D5B7] text-[#1A1A1A] py-4 rounded-full font-medium flex items-center justify-center gap-2 transition">
                   <Send className="w-4 h-4" /> Отправить заявку
