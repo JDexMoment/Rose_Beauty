@@ -376,7 +376,7 @@ export default function Home() {
                   <div className="w-9 h-9 rounded-full bg-[#C9A96A] border-2 border-[#FFF8F5] flex items-center justify-center text-white text-xs font-medium">+4</div>
                 </div>
                 <div className="leading-tight">
-                  <div className="font-medium">7 мастеров • 382 оценки</div>
+                  <div className="font-medium">5 мастеров • 382 оценки</div>
                   <div className="text-xs text-[#8C7A78] flex items-center gap-1">
                     <Star className="w-3.5 h-3.5 fill-[#C9A96A] text-[#C9A96A]" /> 5.0 — нам доверяют заволгой
                   </div>
@@ -429,7 +429,7 @@ export default function Home() {
             {[
               { k: "15+", l: "лет в Заволжском районе" },
               { k: "382", l: "оценки 5.0 на Dikidi" },
-              { k: "7", l: "мастеров в команде" },
+              { k: "5", l: "мастеров в команде" },
               { k: "73", l: "услуги в прайсе" },
             ].map((s) => (
               <div key={s.k} className="bg-white rounded-2xl border border-[#E8D5B7]/60 px-4 py-4 lg:py-5 text-center">
