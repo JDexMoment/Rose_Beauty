@@ -698,7 +698,7 @@ export default function Home() {
               {beforeAfterWorks.map((src, i) => (
                 <div
                   key={`ba-${i}`}
-                  className={`group relative rounded-2xl overflow-hidden bg-[#FDF2EE] border border-transparent hover:border-[#E8D5B7] transition ${i === 0 ? "lg:row-span-2 aspect-[4/5] lg:aspect-auto" : "aspect-[4/3.2]"}`}
+                  className={`group relative rounded-2xl overflow-hidden bg-[#FDF2EE] border border-transparent hover:border-[#E8D5B7] `}
                 >
                   <img src={src} alt={`До После ${i + 1}`} className="w-full h-full object-cover group-hover:scale-[1.03] transition duration-700" />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/35 via-black/0 to-transparent opacity-60 group-hover:opacity-80 transition" />
