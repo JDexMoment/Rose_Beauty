@@ -389,8 +389,8 @@ export default function Home() {
               </div>
             </div>
 
-            {/* Right */}
-            <motion.div initial={{ opacity: 0, scale: 0.98 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.8 }} className="order-1 lg:order-2 relative pb-8 lg:pb-0">
+            {/* Right — убран блок "Свободные окна", плашка с оценкой теперь вместо него внутри фото */}
+            <motion.div initial={{ opacity: 0, scale: 0.98 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.8 }} className="order-1 lg:order-2 relative">
               <div className="relative rounded-[28px] lg:rounded-[36px] overflow-hidden bg-[#E8D5B7] p-1.5 lg:p-2">
                 <div className="relative rounded-[22px] lg:rounded-[28px] overflow-hidden aspect-[4/3.2] lg:aspect-[4/3]">
                   <img
@@ -399,33 +399,22 @@ export default function Home() {
                     className="w-full h-full object-cover"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent" />
-                  {/* Floating card */}
-                  <div className="absolute bottom-3 lg:bottom-4 left-3 lg:left-4 right-3 lg:right-4 glass rounded-2xl p-3 lg:p-4 flex items-center justify-between">
-                    <div>
-                      <div className="text-xs tracking-widest text-[#8C7A78]">СВОБОДНЫЕ ОКНА СЕГОДНЯ</div>
-                      <div className="font-medium text-sm lg:text-base">Есть запись на 15:30 и 18:00</div>
+                  {/* Плашка с оценкой и наградой — теперь вместо "Свободные окна" внутри фото */}
+                  <div className="absolute bottom-3 lg:bottom-4 left-3 lg:left-4 right-3 lg:right-4 bg-white rounded-2xl shadow-[0_12px_40px_rgba(0,0,0,0.12)] border border-[#E8D5B7] p-3 lg:p-4 flex items-center gap-3">
+                    <div className="w-10 h-10 lg:w-12 lg:h-12 rounded-xl bg-[#FDE8E9] flex items-center justify-center shrink-0">
+                      <Star className="w-5 h-5 lg:w-6 lg:h-6 text-[#C9898E] fill-[#C9898E]" />
                     </div>
-                    <a href="#booking" className="w-10 h-10 rounded-full bg-[#1A1A1A] text-white flex items-center justify-center shrink-0">
-                      <ArrowRight className="w-4 h-4" />
-                    </a>
+                    <div className="flex-1 min-w-0">
+                      <div className="font-display text-xl lg:text-2xl leading-none">5.0</div>
+                      <div className="text-xs text-[#8C7A78]">224 оценки за 2025</div>
+                    </div>
+                    <div className="hidden sm:block h-10 w-px bg-[#E8D5B7] mx-1 lg:mx-2" />
+                    <div className="text-xs leading-tight text-left">
+                      DIKIDI AWARDS
+                      <br />
+                      <span className="text-[#C9A96A] font-medium">Победитель 2025</span>
+                    </div>
                   </div>
-                </div>
-              </div>
-
-              {/* Badge — на мобилке не перекрывает "Свободные окна" */}
-              <div className="absolute -bottom-6 lg:-bottom-4 left-1/2 -translate-x-1/2 lg:left-auto lg:translate-x-0 lg:-left-4 bg-white rounded-2xl shadow-[0_12px_40px_rgba(0,0,0,0.08)] border border-[#E8D5B7] p-2.5 lg:p-4 flex items-center gap-2.5 lg:gap-3 w-[86%] lg:w-auto justify-center lg:justify-start">
-                <div className="w-10 h-10 lg:w-12 lg:h-12 rounded-xl bg-[#FDE8E9] flex items-center justify-center">
-                  <Star className="w-5 h-5 lg:w-6 lg:h-6 text-[#C9898E] fill-[#C9898E]" />
-                </div>
-                <div>
-                  <div className="font-display text-xl lg:text-2xl leading-none">5.0</div>
-                  <div className="text-xs text-[#8C7A78]">224 оценки за 2025</div>
-                </div>
-                <div className="hidden lg:block h-10 w-px bg-[#E8D5B7] mx-2" />
-                <div className="hidden lg:block text-xs leading-tight">
-                  DIKIDI AWARDS
-                  <br />
-                  <span className="text-[#C9A96A] font-medium">Победитель 2025</span>
                 </div>
               </div>
 
