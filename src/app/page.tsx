@@ -652,7 +652,6 @@ export default function Home() {
               <span className="inline-flex items-center gap-1.5 bg-[#1A1A1A] text-white text-xs px-3 py-1.5 rounded-full">
                 <Sparkles className="w-3.5 h-3.5 text-[#C9A96A]" /> До / После
               </span>
-              <span className="text-xs text-[#8C7A78]">Трансформации из папки BeforeAfter</span>
             </div>
             <div className="grid grid-cols-2 lg:grid-cols-3 gap-3 lg:gap-4">
               {beforeAfterWorks.map((src, i) => (
@@ -672,7 +671,7 @@ export default function Home() {
               <span className="inline-flex items-center gap-1.5 bg-[#FDE8E9] border border-[#E8D5B7] text-xs px-3 py-1.5 rounded-full font-medium">
                 Избранное
               </span>
-              <span className="text-xs text-[#8C7A78]">Подборка по мастерам — уже без метки «до/после», со своим тегом</span>
+              <span className="text-xs text-[#8C7A78]">Подборка по мастерам</span>
             </div>
             <div className="grid grid-cols-2 lg:grid-cols-3 gap-3 lg:gap-4">
               {customWorks.map((w, i) => (
